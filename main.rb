@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
-
-
 require 'rubygems'
 require 'nutshell-crm-api'
+require 'csv'
 
 # nutshell credentials
 $username = ARGV[0]

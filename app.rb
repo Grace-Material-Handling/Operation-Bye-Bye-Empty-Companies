@@ -1,9 +1,10 @@
 # app.rb
 
-# login to nutshell
+# Login to nutshell.
 $nutshell = NutshellCrmAPI::Client.new($username, $apiKey)
 
 
+# Get all companies in nutshell.
 companies = []
 i = 0
 loop do
@@ -14,7 +15,8 @@ loop do
 end
 
 
-
+# Filter companies that have no people
+# associated with them.
 companies_without_people = []
 companies.each do |company|
 	if company["contacts"].length == 0
@@ -23,4 +25,14 @@ companies.each do |company|
 end
 
 
+# Create spreadsheet with missing companies.
+CSV.open("companies_without_people.csv", "wb") do |csv|
+	csv << ["Company"]
+	companies_without_people.each do |company|
+		csv << [].push(company["name"])
+	end
+end
+
+
+# Print message to Jenkins
 puts "You have #{companies_without_people.length} companies without people."
