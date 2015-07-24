@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+
 require 'rubygems'
 require 'nutshell-crm-api'
 

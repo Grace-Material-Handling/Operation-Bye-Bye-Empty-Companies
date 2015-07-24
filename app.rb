@@ -1,7 +1,5 @@
 # app.rb
 
-STDOUT.sync = true
-
 # login to nutshell
 $nutshell = NutshellCrmAPI::Client.new($username, $apiKey)
 
