@@ -34,4 +34,6 @@ end
 
 
 # Print message to Jenkins
+puts "####################################"
 puts "You have #{companies_without_people.length} companies without people."
+puts "####################################"
