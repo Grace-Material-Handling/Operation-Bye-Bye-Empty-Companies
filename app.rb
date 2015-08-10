@@ -33,15 +33,7 @@ CSV.open("companies_without_people.csv", "wb") do |csv|
 end
 
 
-# Set message
-$msg = "You have #{companies_without_people.length} companies without people."
-
-
 # Print message to Jenkins
 puts "####################################"
-puts $msg
+puts "You have #{companies_without_people.length} companies without people."
 puts "####################################"
-
-
-# Export vars
-ENV['MSG'] = $msg
